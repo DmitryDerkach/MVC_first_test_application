@@ -14,6 +14,7 @@ public class TicketService {
 		
 	}
 	
+	
 	public List<TicketDto> findAllByFlightId(Long flightId) {
 		return ticketDao.findAllByFlightId(flightId).stream().map(
 			   ticket -> new TicketDto(ticket.getId(), 
