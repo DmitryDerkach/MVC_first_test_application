@@ -9,7 +9,10 @@
 <body>
 	<%@include file="header.jsp"%>
 	<div> 
-		Content. Русский
+		<span>Content. Русский</span>
+		<p>Size: ${requestScope.flights.size()}</p>
+		<p>Id: ${requestScope.flights.get(0).id} </p>
+		<p>Id 2: ${requestScope.flights[1].id} </p>	
 	</div>
 	<%@include file="footer.jsp"%>
 </body>
