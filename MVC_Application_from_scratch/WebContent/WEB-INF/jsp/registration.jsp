@@ -16,6 +16,9 @@
 		 <label for="birthdayId">Birthday:
             <input type="date" name="birthday" id="birthdayId">
         </label><br>
+        <label for="imageId">Image:
+            <input type="file" name="image" id="imageId">
+        </label><br>
         <label for="emailId">Email:
             <input type="text" name="email" id="emailId">
         </label><br>
