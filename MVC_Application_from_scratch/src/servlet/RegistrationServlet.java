@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,7 @@ import exception.ValidationException;
 import service.UserService;
 import util.JspHelper;
 
+@MultipartConfig(fileSizeThreshold = 1024 * 1024)
 @WebServlet("/registration")
 public class RegistrationServlet extends HttpServlet{
 
@@ -31,9 +33,9 @@ public class RegistrationServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 		CreateUserDto userDto = CreateUserDto.builder()
 				.name(req.getParameter("name"))
+				.image(req.getPart("image"))
 				.birthday(req.getParameter("birthday"))
 				.email(req.getParameter("email"))
 				.password(req.getParameter("password"))

@@ -1,5 +1,7 @@
 package dto;
 
+import javax.servlet.http.Part;
+
 import lombok.Builder;
 import lombok.Value;
 
@@ -8,6 +10,7 @@ import lombok.Value;
 public class CreateUserDto {
 	String name;
 	String birthday;
+	Part image;
 	String email;
 	String password;
 	String role;
